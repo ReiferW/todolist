@@ -8,11 +8,16 @@ let template = templateElement.innerHTML
 let showActiveButton = document.getElementById("show-active")
 let showAllbutton = document.getElementById("show-all")
 // step 2: Write a function to implement the behaviour
+function saveTask (name, isCompleted){
+    localStorage.setItem(name, isCompleted)
+}
+
 function onAddTaskClicked (event){
     let taskName = newTaskInput.value;
     newTaskInput.value = "";
     let taskHTML = template.replace("<!--TASK_NAME-->",taskName);
     todoListContainer.insertAdjacentHTML("afterbegin",taskHTML)
+    saveTask(taskName,false)
 }
 function onTodoListClicked(event){
     let targetElement = event.target;
