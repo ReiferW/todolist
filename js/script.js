@@ -6,6 +6,7 @@ let templateElement = document.getElementById("list-item-template")
 let template = templateElement.innerHTML
 
 let showActiveButton = document.getElementById("show-active")
+let showAllbutton = document.getElementById("show-all")
 // step 2: Write a function to implement the behaviour
 function onAddTaskClicked (event){
     let taskName = newTaskInput.value;
@@ -43,7 +44,15 @@ function showActiveTasks(event){
         }
     }
 }
+function showAllTasks(event){
+    let tasks = document.getElementsByClassName("task")
+    for (let i = 0;i<tasks.length;i++)
+    {
+            tasks[i].style.display = "block"
+    }
+}
 // step 3: link element, function and event
 addTaskButton.addEventListener('click',onAddTaskClicked);
 todoListContainer.addEventListener('click',onTodoListClicked);
 showActiveButton.addEventListener('click',showActiveTasks);
+showAllbutton.addEventListener('click',showAllTasks);
