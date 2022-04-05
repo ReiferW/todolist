@@ -31,7 +31,7 @@ function onTodoListClicked(event){
     }
 }
 
-function showActiveTasks(){
+function showActiveTasks(event){
     let tasks = document.getElementsByClassName("task")
     for (let i = 0;i<tasks.length;i++)
     {
