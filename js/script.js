@@ -45,6 +45,10 @@ function onTodoListClicked(event){
     } else {
         targetElement.classList.remove("completed");
     }
+
+    let tasknameElement = targetElement.querySelector(".task-name");
+    let taskName = tasknameElement.innerHTML
+    saveTask (taskName, checkbox.checked);
 }
 
 function showActiveTasks(event){
